@@ -18,8 +18,8 @@ def get_tasks():
 @app.route("/tasks", methods=["POST"])
 def create_task():
     data = request.get_json()
-    if not data or "title" not in data:
-        return jsonify({"error": "title is required"}), 400
+    #if not data or "title" not in data:
+    #    return jsonify({"error": "title is required"}), 400
     task = {"id": len(tasks) + 1, "title": data["title"], "done": False}
     tasks.append(task)
     return jsonify(task), 201
